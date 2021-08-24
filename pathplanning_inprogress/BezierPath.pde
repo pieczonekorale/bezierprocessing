@@ -40,7 +40,7 @@ PVector formula(PVector u, PVector v){
   float getAngle(PVector a, PVector b, PVector c){
   float ang;
     ang = atan2(c.y-b.y, c.x-b.x) - atan2(a.y-b.y, a.x-b.x);
-    print(degrees(ang));
+  //  print(degrees(ang));
       return radians(degrees(ang));
     }
     

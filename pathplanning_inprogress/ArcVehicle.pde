@@ -81,8 +81,8 @@ class ArcVehicle {
       return path.arcs.get(2); 
       }
       
-       else {PVector papaj = new PVector(2137,2137);
-     return papaj;}
+       else {return new PVector(2137,2137);
+     }
       }
     }
   }
@@ -137,8 +137,8 @@ circle(normal_cross_fixed.x, normal_cross_fixed.y, 10);
     if (min_distance > 0) {
     PVector correct_target = PVector.sub(normal_cross_fixed, center);
     if (correct_target.mag() == 0) return;
-    correct_target.normalize();
-    correct_target.mult(velocity_limiter);
+   // correct_target.normalize();
+    //correct_target.mult(velocity_limiter);
     PVector dir_correction = PVector.sub(correct_target, velocity);
    // dir_correction.limit(pull_limiter); 
     acceleration.add(dir_correction);

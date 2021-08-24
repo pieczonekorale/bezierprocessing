@@ -49,7 +49,7 @@ class Vehicle {
    void analize(Path p) {
     PVector future_velocity = velocity.get(); 
     future_velocity.normalize(); //sprawdzenie kierunku wektora predkosci
-    future_velocity.mult(5); //wydluzenie wektora predkosci o tyle, ile klatek "do przodu" chcemy policzyc predkosc
+    future_velocity.mult(2); //wydluzenie wektora predkosci o tyle, ile klatek "do przodu" chcemy policzyc predkosc
     PVector future_location = PVector.add(center, future_velocity); //sprawdzenie lokalizacji samochodu 1 probke czasu do przodu
     PVector dir;
     //liczenie bledu ycerr (odleglosc biezacej pozycji pojazdu od sciezki referencyjnej) i yerr (odleglosc przyszlej lokalizacji od sciezki) - realizowane poprzednio na wzorze odleglosci punktu od prostej
@@ -83,10 +83,10 @@ class Vehicle {
       print("\n");
     PVector correct_target = PVector.sub(normal_cross_fixed, center);
 
-    correct_target.normalize();
-    correct_target.mult(velocity_limiter);
+  //  correct_target.normalize();
+    //correct_target.mult(velocity_limiter);
     PVector dir_correction = PVector.sub(correct_target, velocity);
-    dir_correction.limit(pull_limiter); 
+   // dir_correction.limit(pull_limiter); 
     acceleration.add(dir_correction);
     }
     //found_futureloc = normal_cross_fixed;
@@ -99,7 +99,7 @@ class Vehicle {
    //aktualizacja wartosci
     void param_update() {
     velocity.add(acceleration);
-    velocity.limit(velocity_limiter);
+    //velocity.limit(velocity_limiter);
     center.add(velocity);
     acceleration.mult(0);
    // rad_acceleration = 0.0;
