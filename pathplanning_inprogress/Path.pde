@@ -21,8 +21,14 @@ class Path {
     waypoints.add(p);
   }
   
+
+  
   void plot() {
     //obrys korytarza
+    stroke(0);
+      fill(255);
+      circle(10, 10, 20);
+      
     stroke(255);
     strokeWeight(pathsize);
     noFill();
